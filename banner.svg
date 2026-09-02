@@ -121,8 +121,8 @@
 
     <!-- Emoticons (Aparecem após o nome) -->
     <g class="txt-base">
-      <text id="faceNormal" x="295" y="0">( :</text>
-      <text id="faceBlink" x="295" y="0">( ;</text>
+      <text id="faceNormal" x="295" y="0">(:</text>
+      <text id="faceBlink" x="295" y="0">(;</text>
     </g>
 
   </g>
