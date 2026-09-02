@@ -9,8 +9,7 @@
   <summary><b><strong>Sobre mim</strong></b> <i>(Clique para ler)</i></summary>
   <br/>
   Acredito que o bom software nasce na interseção exata entre a engenharia estruturada e o design fluido. Minha trajetória acadêmica tem uma particularidade: começou no <b>Jornalismo</b> antes de migrar para a <b>Ciência da Computação</b>. Isso me deu uma visão muito específica sobre desenvolvimento — a tecnologia precisa se comunicar bem, engajar e ter empatia com quem a usa.<br><br>
-  Trato o frontend com o mesmo rigor lógico que aplico ao backend. Seja estruturando a arquitetura de um app ou criando vetores personalizados, o objetivo é criar experiências dinâmicas e com propósito.<br><br>
-  Além do código, possuo domínio avançado do Pacote Office — com um conhecimento técnico em <b>PowerPoint</b> muito acima da curva — e tenho fluência <b>nível C2 em Inglês</b>, alcançada de forma autodidata.
+  Trato o frontend com o mesmo rigor lógico que aplico ao backend. Seja estruturando a arquitetura de um app ou criando vetores personalizados, o objetivo é criar experiências dinâmicas e com propósito.
 </details>
 
 ---
@@ -26,15 +25,15 @@
 **Frontend, Mobile & UI/UX**
 <br/>
 <img src="https://skillicons.dev/icons?i=nextjs,react,flutter,figma&theme=dark" alt="Frontend Stacks" />
-<img src="https://img.shields.io/badge/Affinity_Designer-344265?style=flat-square&logo=affinity-designer&logoColor=white" alt="Affinity Designer" />
+<img src="https://cdn.simpleicons.org/affinitydesigner" height="48" alt="Affinity Designer" />
 
 <br/><br/>
 
 **Produtividade**
 <br/>
-<img src="https://img.shields.io/badge/PowerPoint-B7472A?style=flat-square&logo=microsoftpowerpoint&logoColor=white" alt="PowerPoint" />
-<img src="https://img.shields.io/badge/Word-2B579A?style=flat-square&logo=microsoftword&logoColor=white" alt="Word" />
-<img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white" alt="Excel" />
+<img src="https://cdn.simpleicons.org/microsoftpowerpoint" height="48" alt="PowerPoint" />
+<img src="https://cdn.simpleicons.org/microsoftword" height="48" alt="Word" />
+<img src="https://cdn.simpleicons.org/microsoftexcel" height="48" alt="Excel" />
 
 ---
 
@@ -78,6 +77,6 @@ Desenvolvimento de páginas com foco em altíssima conversão, animações fluid
     <img src="https://skillicons.dev/icons?i=discord&theme=dark" alt="Discord"/>
   </a>
   <a href="https://steamcommunity.com/my/">
-    <img src="https://img.shields.io/badge/Steam-171a21?style=flat-square&logo=steam&logoColor=white" alt="Steam"/>
+    <img src="https://cdn.simpleicons.org/steam/white" height="48" alt="Steam"/>
   </a>
 </div>
