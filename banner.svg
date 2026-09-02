@@ -1,105 +1,129 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
   <defs>
+    <!-- Sombra suave para destacar o texto branco no fundo azul claro -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+
     <style>
-      /* Tipografia do Terminal (Cor Branca) */
-      .text-base {
-        font-family: 'Fira Code', Consolas, 'Courier New', monospace;
-        font-size: 60px;
-        font-weight: 700;
-        fill: #ffffff; 
-      }
-      
-      /* Cursor Piscante */
-      .caret {
-        fill: #ffffff;
-        animation: blink 0.8s infinite;
-      }
-      @keyframes blink {
-        0%, 49% { opacity: 1; }
-        50%, 100% { opacity: 0; }
+      /* Animação unificada da máscara (apaga e escreve de forma travada letra-a-letra) */
+      @keyframes widthAnim {
+        0%   { width: 0px; }
+        5%   { width: 0px; animation-timing-function: steps(6, end); } /* Digita Hello! */
+        11%  { width: 168px; animation-timing-function: linear; } 
+        22%  { width: 168px; animation-timing-function: steps(6, end); } /* Apaga Hello! */
+        28%  { width: 0px; animation-timing-function: linear; }
+        32%  { width: 0px; animation-timing-function: steps(3, end); } /* Digita I'm */
+        35%  { width: 84px; animation-timing-function: linear; }
+        45%  { width: 84px; animation-timing-function: steps(3, end); } /* Apaga I'm */
+        48%  { width: 0px; animation-timing-function: linear; }
+        54%  { width: 0px; animation-timing-function: steps(10, end); } /* Digita AugustoCGM */
+        66%  { width: 280px; animation-timing-function: linear; }
+        100% { width: 280px; } /* Congela no tamanho final */
       }
 
-      /* Containers de Texto com Passos (Steps) Exatos por Letra */
-      .txt-hello { width: 0; animation: typeHello 1s steps(6) forwards, untypeHello 1s steps(6) 2.5s forwards; }
-      .txt-im { width: 0; animation: typeIm 0.6s steps(3) 4s forwards, untypeIm 0.6s steps(3) 5.6s forwards; }
-      .txt-augusto { width: 0; animation: typeAugusto 1.5s steps(10) 6.8s forwards; }
-      
-      /* Larguras exatas baseadas em fonte monospace de 60px (cada letra = ~36px) */
-      @keyframes typeHello { from { width: 0; } to { width: 216px; } }
-      @keyframes untypeHello { from { width: 216px; } to { width: 0; } }
-      
-      @keyframes typeIm { from { width: 0; } to { width: 108px; } }
-      @keyframes untypeIm { from { width: 108px; } to { width: 0; } }
-      
-      @keyframes typeAugusto { from { width: 0; } to { width: 360px; } }
-      
-      /* Sincronização do movimento do Cursor */
-      .caret-move {
-        transform: translateX(0);
-        animation:
-          cursorHello 1s steps(6) forwards,
-          cursorUntypeHello 1s steps(6) 2.5s forwards,
-          cursorIm 0.6s steps(3) 4s forwards,
-          cursorUntypeIm 0.6s steps(3) 5.6s forwards,
-          cursorAugusto 1.5s steps(10) 6.8s forwards;
+      /* Animação sincronizada do Cursor */
+      @keyframes cursorMove {
+        0%   { transform: translateX(0px); }
+        5%   { transform: translateX(0px); animation-timing-function: steps(6, end); }
+        11%  { transform: translateX(168px); animation-timing-function: linear; }
+        22%  { transform: translateX(168px); animation-timing-function: steps(6, end); }
+        28%  { transform: translateX(0px); animation-timing-function: linear; }
+        32%  { transform: translateX(0px); animation-timing-function: steps(3, end); }
+        35%  { transform: translateX(84px); animation-timing-function: linear; }
+        45%  { transform: translateX(84px); animation-timing-function: steps(3, end); }
+        48%  { transform: translateX(0px); animation-timing-function: linear; }
+        54%  { transform: translateX(0px); animation-timing-function: steps(10, end); }
+        66%  { transform: translateX(280px); animation-timing-function: linear; }
+        100% { transform: translateX(280px); }
       }
-      @keyframes cursorHello { from { transform: translateX(0); } to { transform: translateX(216px); } }
-      @keyframes cursorUntypeHello { from { transform: translateX(216px); } to { transform: translateX(0); } }
-      @keyframes cursorIm { from { transform: translateX(0); } to { transform: translateX(108px); } }
-      @keyframes cursorUntypeIm { from { transform: translateX(108px); } to { transform: translateX(0); } }
-      @keyframes cursorAugusto { from { transform: translateX(0); } to { transform: translateX(360px); } }
-      
-      /* Emoticons e Linha do Tempo (Não entram em loop) */
-      .face1 { animation: f1 12s forwards; opacity: 0; fill: #fbbf24; }
-      .face2 { animation: f2 12s forwards; opacity: 0; fill: #fbbf24; }
-      
-      @keyframes f1 {
-        0%, 74.9% { opacity: 0; }       /* Escondido até 9s */
-        75%, 79.1% { opacity: 1; }      /* Aparece ( : */
-        79.2%, 83.2% { opacity: 0; }    /* Esconde para a piscadinha */
-        83.3%, 87.4% { opacity: 1; }    /* Volta ( : */
-        87.5%, 100% { opacity: 0; }     /* Some para sempre */
+
+      /* Alternância de visibilidade dos textos (ocorre quando a máscara está em 0px) */
+      @keyframes showHello {
+        0%, 28% { opacity: 1; }
+        28.1%, 100% { opacity: 0; }
       }
-      @keyframes f2 {
-        0%, 79.1% { opacity: 0; }
-        79.2%, 83.2% { opacity: 1; }    /* Aparece ( ; piscando */
-        83.3%, 100% { opacity: 0; }
+      @keyframes showIm {
+        0%, 28% { opacity: 0; }
+        28.1%, 48% { opacity: 1; }
+        48.1%, 100% { opacity: 0; }
       }
+      @keyframes showAugusto {
+        0%, 48% { opacity: 0; }
+        48.1%, 100% { opacity: 1; }
+      }
+
+      /* Animação do Emoticon */
+      @keyframes faceNormal {
+        0%, 68% { opacity: 0; }
+        70%, 76% { opacity: 1; }
+        77%, 81% { opacity: 0; }
+        82%, 88% { opacity: 1; }
+        92%, 100% { opacity: 0; } /* Some completamente no final */
+      }
+      @keyframes faceBlink {
+        0%, 76% { opacity: 0; }
+        77%, 81% { opacity: 1; }
+        82%, 100% { opacity: 0; }
+      }
+
+      /* Cursor pisca 12 vezes e depois desaparece, mantendo o banner limpo/estático */
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 99% { opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      .txt-base {
+        font-family: 'Fira Code', 'Courier New', Consolas, monospace;
+        font-weight: 700;
+        font-size: 48px;
+        fill: #ffffff;
+      }
+      
+      #maskRect { animation: widthAnim 10s forwards; }
+      .cursor-mover { animation: cursorMove 10s forwards; }
+      .cursor-blinker { animation: cursorBlink 0.8s 12 forwards; }
+      
+      #txtHello { animation: showHello 10s forwards; }
+      #txtIm { animation: showIm 10s forwards; opacity: 0; }
+      #txtAugusto { animation: showAugusto 10s forwards; opacity: 0; }
+      
+      #faceNormal { animation: faceNormal 10s forwards; opacity: 0; }
+      #faceBlink { animation: faceBlink 10s forwards; opacity: 0; }
     </style>
   </defs>
 
-  <!-- BACKGROUND: Cor sólida de segurança caso o PNG demore a carregar -->
-  <rect width="1584" height="396" fill="#0f172a" />
-  
-  <!-- A SUA ARTE AQUI: Puxa o arquivo que você exportar do Affinity -->
-  <image href="assets/fundo_banner.png" width="1584" height="396" x="0" y="0" />
+  <!-- BACKGROUND: Carrega o PNG feito no Affinity (salve o PNG no repositório com o nome background.png) -->
+  <rect width="1584" height="396" fill="#0ea5e9" /> <!-- Fundo fallback (azul claro) caso a imagem demore a carregar -->
+  <image href="background.png" width="1584" height="396" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- GRUPO DE TEXTO E ANIMAÇÃO: Centralizado horizontalmente e verticalmente -->
-  <g transform="translate(612, 210)">
+  <!-- CENTRO DA ANIMAÇÃO -->
+  <!-- Transladado para o exato centro considerando 280px do seu nome final -->
+  <g transform="translate(652, 210)" filter="url(#glow)">
     
-    <!-- Máscaras que revelam as letras passo a passo -->
-    <svg x="0" y="-55" width="216" height="70" class="txt-hello">
-      <text x="0" y="55" class="text-base">Hello!</text>
-    </svg>
+    <!-- Máscara de revelação do texto -->
+    <clipPath id="textMask">
+      <rect id="maskRect" x="0" y="-50" height="70" width="0" />
+    </clipPath>
 
-    <svg x="0" y="-55" width="108" height="70" class="txt-im">
-      <text x="0" y="55" class="text-base">I'm</text>
-    </svg>
-
-    <svg x="0" y="-55" width="360" height="70" class="txt-augusto">
-      <text x="0" y="55" class="text-base">AugustoCGM</text>
-    </svg>
-    
-    <!-- Cursor do Terminal -->
-    <g class="caret-move">
-      <rect x="6" y="-50" width="5" height="60" class="caret" rx="2" />
+    <!-- Textos alternando (tamanho exato por letra = 28px) -->
+    <g clip-path="url(#textMask)">
+      <text id="txtHello" class="txt-base" x="0" y="0" textLength="168" lengthAdjust="spacingAndGlyphs">Hello!</text>
+      <text id="txtIm" class="txt-base" x="0" y="0" textLength="84" lengthAdjust="spacingAndGlyphs">I'm</text>
+      <text id="txtAugusto" class="txt-base" x="0" y="0" textLength="280" lengthAdjust="spacingAndGlyphs">AugustoCGM</text>
     </g>
-    
-    <!-- Emoticons -->
-    <g transform="translate(380, 0)">
-      <text x="0" y="0" class="text-base face1">( :</text>
-      <text x="0" y="0" class="text-base face2">( ;</text>
+
+    <!-- Cursor Sincronizado -->
+    <g class="cursor-mover">
+      <rect class="cursor-blinker" x="6" y="-42" width="4" height="52" fill="#ffffff" rx="1" />
     </g>
-    
+
+    <!-- Emoticons (Aparecem após o nome) -->
+    <g class="txt-base">
+      <text id="faceNormal" x="295" y="0">( :</text>
+      <text id="faceBlink" x="295" y="0">( ;</text>
+    </g>
+
   </g>
 </svg>
