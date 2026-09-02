@@ -6,10 +6,10 @@
 <br/>
 
 <details>
-  <summary><b>👨‍💻 Sobre minha jornada</b> <i>(Clique para ler)</i></summary>
+  <summary><b><strong>Sobre mim</strong></b> <i>(Clique para ler)</i></summary>
   <br/>
   Acredito que o bom software nasce na interseção exata entre a engenharia estruturada e o design fluido. Minha trajetória acadêmica tem uma particularidade: começou no <b>Jornalismo</b> antes de migrar para a <b>Ciência da Computação</b>. Isso me deu uma visão muito específica sobre desenvolvimento — a tecnologia precisa se comunicar bem, engajar e ter empatia com quem a usa.<br><br>
-  Trato o frontend com o mesmo rigor lógico que aplico ao backend. Seja estruturando a arquitetura de um app ou desenhando vetores no meu tablet, o objetivo é criar experiências com propósito e beleza.
+  Trato o frontend com o mesmo rigor lógico que aplico ao backend. Seja estruturando a arquitetura de um app ou criando vetorea personalizados, o objetivo é criar experiências dinâmicas e com propósito.
 </details>
 
 ---
