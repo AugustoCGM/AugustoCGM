@@ -1,5 +1,4 @@
 <div align="center">
-  <!-- Certifique-se de que o arquivo banner.svg esteja na mesma pasta raiz deste README -->
   <img src="banner.svg" alt="Banner Augusto Moreno" width="100%" />
 </div>
 
@@ -25,15 +24,15 @@
 **Frontend, Mobile & UI/UX**
 <br/>
 <img src="https://skillicons.dev/icons?i=nextjs,react,flutter,figma&theme=dark" alt="Frontend Stacks" />
-<img src="https://cdn.simpleicons.org/affinitydesigner" height="48" alt="Affinity Designer" />
+<img src="assets/affinity.png" height="48" alt="Affinity Designer" />
 
 <br/><br/>
 
 **Produtividade**
 <br/>
-<img src="https://cdn.simpleicons.org/microsoftpowerpoint" height="48" alt="PowerPoint" />
-<img src="https://cdn.simpleicons.org/microsoftword" height="48" alt="Word" />
-<img src="https://cdn.simpleicons.org/microsoftexcel" height="48" alt="Excel" />
+<img src="assets/powerpoint.png" height="48" alt="PowerPoint" />
+<img src="assets/word.png" height="48" alt="Word" />
+<img src="assets/excel.png" height="48" alt="Excel" />
 
 ---
 
@@ -61,7 +60,7 @@ Desenvolvimento de páginas com foco em altíssima conversão, animações fluid
 
 ---
 
-### Vamos construir algo incrível?
+### Onde me encontrar
 
 <div align="center">
   <a href="mailto:Augusto.cgm020306@gmail.com">
