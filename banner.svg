@@ -1,128 +1,139 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
   <defs>
-    <!-- Sombra suave para destacar o texto branco no fundo azul claro -->
+    <!-- Efeito de sombra/brilho para destacar o texto branco por cima da sua imagem -->
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15"/>
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
 
+    <!-- A máscara exata que revela e esconde as letras -->
+    <clipPath id="textMask">
+      <rect id="maskRect" x="0" y="-90" height="120" width="0" />
+    </clipPath>
+
     <style>
-      /* Animação unificada da máscara (apaga e escreve de forma travada letra-a-letra) */
-      @keyframes widthAnim {
-        0%   { width: 0px; }
-        5%   { width: 0px; animation-timing-function: steps(6, end); } /* Digita Hello! */
-        11%  { width: 168px; animation-timing-function: linear; } 
-        22%  { width: 168px; animation-timing-function: steps(6, end); } /* Apaga Hello! */
-        28%  { width: 0px; animation-timing-function: linear; }
-        32%  { width: 0px; animation-timing-function: steps(3, end); } /* Digita I'm */
-        35%  { width: 84px; animation-timing-function: linear; }
-        45%  { width: 84px; animation-timing-function: steps(3, end); } /* Apaga I'm */
-        48%  { width: 0px; animation-timing-function: linear; }
-        54%  { width: 0px; animation-timing-function: steps(10, end); } /* Digita AugustoCGM */
-        66%  { width: 280px; animation-timing-function: linear; }
-        100% { width: 280px; } /* Congela no tamanho final */
+      /* 
+         Animação de Máscara (12 Segundos no total)
+         Usa "steps()" matematicamente sincronizados para pular de letra em letra 
+         (Cada letra mede exatamente 50px de largura).
+      */
+      @keyframes maskAnim {
+        0%      { width: 0px;   animation-timing-function: steps(6, end); } /* Digita Hello! (6 passos) */
+        7.5%    { width: 300px; animation-timing-function: linear; }        /* Pausa */
+        15.8%   { width: 300px; animation-timing-function: steps(6, end); } /* Apaga Hello! (6 passos) */
+        23.3%   { width: 0px;   animation-timing-function: linear; }        /* Pausa */
+        27.5%   { width: 0px;   animation-timing-function: steps(3, end); } /* Digita I'm (3 passos) */
+        31.25%  { width: 150px; animation-timing-function: linear; }        /* Pausa */
+        39.5%   { width: 150px; animation-timing-function: steps(3, end); } /* Apaga I'm (3 passos) */
+        43.3%   { width: 0px;   animation-timing-function: linear; }        /* Pausa */
+        47.5%   { width: 0px;   animation-timing-function: steps(10, end); }/* Digita AugustoCGM (10 passos) */
+        60.0%   { width: 500px; animation-timing-function: linear; }        /* Pausa no nome */
+        64.1%   { width: 500px; animation-timing-function: steps(4, end); } /* Digita " (:" (4 passos) */
+        69.1%   { width: 700px; animation-timing-function: linear; }        /* Pausa na carinha completa */
+        81.6%   { width: 700px; animation-timing-function: steps(4, end); } /* Apaga " (:" (4 passos) */
+        86.6%   { width: 500px; animation-timing-function: linear; }        /* Fim da digitação. Para em AugustoCGM */
+        100%    { width: 500px; }
       }
 
-      /* Animação sincronizada do Cursor */
+      /* Cursor movendo perfeitamente junto com a máscara */
       @keyframes cursorMove {
-        0%   { transform: translateX(0px); }
-        5%   { transform: translateX(0px); animation-timing-function: steps(6, end); }
-        11%  { transform: translateX(168px); animation-timing-function: linear; }
-        22%  { transform: translateX(168px); animation-timing-function: steps(6, end); }
-        28%  { transform: translateX(0px); animation-timing-function: linear; }
-        32%  { transform: translateX(0px); animation-timing-function: steps(3, end); }
-        35%  { transform: translateX(84px); animation-timing-function: linear; }
-        45%  { transform: translateX(84px); animation-timing-function: steps(3, end); }
-        48%  { transform: translateX(0px); animation-timing-function: linear; }
-        54%  { transform: translateX(0px); animation-timing-function: steps(10, end); }
-        66%  { transform: translateX(280px); animation-timing-function: linear; }
-        100% { transform: translateX(280px); }
+        0%      { transform: translateX(0px);   animation-timing-function: steps(6, end); }
+        7.5%    { transform: translateX(300px); animation-timing-function: linear; }
+        15.8%   { transform: translateX(300px); animation-timing-function: steps(6, end); }
+        23.3%   { transform: translateX(0px);   animation-timing-function: linear; }
+        27.5%   { transform: translateX(0px);   animation-timing-function: steps(3, end); }
+        31.25%  { transform: translateX(150px); animation-timing-function: linear; }
+        39.5%   { transform: translateX(150px); animation-timing-function: steps(3, end); }
+        43.3%   { transform: translateX(0px);   animation-timing-function: linear; }
+        47.5%   { transform: translateX(0px);   animation-timing-function: steps(10, end); }
+        60.0%   { transform: translateX(500px); animation-timing-function: linear; }
+        64.1%   { transform: translateX(500px); animation-timing-function: steps(4, end); }
+        69.1%   { transform: translateX(700px); animation-timing-function: linear; }
+        81.6%   { transform: translateX(700px); animation-timing-function: steps(4, end); }
+        86.6%   { transform: translateX(500px); animation-timing-function: linear; }
+        100%    { transform: translateX(500px); }
       }
 
-      /* Alternância de visibilidade dos textos (ocorre quando a máscara está em 0px) */
+      /* Controla a troca exata de textos quando a máscara está em 0px */
       @keyframes showHello {
-        0%, 28% { opacity: 1; }
-        28.1%, 100% { opacity: 0; }
+        0%, 23.3%   { opacity: 1; }
+        23.4%, 100% { opacity: 0; }
       }
       @keyframes showIm {
-        0%, 28% { opacity: 0; }
-        28.1%, 48% { opacity: 1; }
-        48.1%, 100% { opacity: 0; }
+        0%, 27.4%   { opacity: 0; }
+        27.5%, 43.3% { opacity: 1; }
+        43.4%, 100% { opacity: 0; }
       }
       @keyframes showAugusto {
-        0%, 48% { opacity: 0; }
-        48.1%, 100% { opacity: 1; }
+        0%, 47.4%   { opacity: 0; }
+        47.5%, 100% { opacity: 1; }
       }
-
-      /* Animação do Emoticon */
       @keyframes faceNormal {
-        0%, 68% { opacity: 0; }
-        70%, 76% { opacity: 1; }
-        77%, 81% { opacity: 0; }
-        82%, 88% { opacity: 1; }
-        92%, 100% { opacity: 0; } /* Some completamente no final */
+        0%, 47.4%   { opacity: 0; }
+        47.5%, 73.2%{ opacity: 1; }  /* Aparece normal */
+        73.3%, 77.5%{ opacity: 0; }  /* Some para dar lugar à piscada */
+        77.6%, 100% { opacity: 1; }  /* Volta (mas depois será apagado pela máscara) */
       }
       @keyframes faceBlink {
-        0%, 76% { opacity: 0; }
-        77%, 81% { opacity: 1; }
-        82%, 100% { opacity: 0; }
+        0%, 73.2%   { opacity: 0; }
+        73.3%, 77.5%{ opacity: 1; }  /* Pisca! */
+        77.6%, 100% { opacity: 0; }
       }
-
-      /* Cursor pisca 12 vezes e depois desaparece, mantendo o banner limpo/estático */
       @keyframes cursorBlink {
-        0%, 49% { opacity: 1; }
-        50%, 99% { opacity: 0; }
-        100% { opacity: 0; }
+        0%, 49%     { opacity: 1; }
+        50%, 100%   { opacity: 0; }
       }
 
       .txt-base {
         font-family: 'Fira Code', 'Courier New', Consolas, monospace;
         font-weight: 700;
-        font-size: 48px;
+        font-size: 80px;
         fill: #ffffff;
       }
       
-      #maskRect { animation: widthAnim 10s forwards; }
-      .cursor-mover { animation: cursorMove 10s forwards; }
-      .cursor-blinker { animation: cursorBlink 0.8s 12 forwards; }
+      /* O atributo "forwards" garante que a animação congele no último passo */
+      #maskRect { animation: maskAnim 12s forwards; }
+      .cursor-mover { animation: cursorMove 12s forwards; }
+      .cursor-blinker { animation: cursorBlink 0.8s infinite; } /* Continua piscando pra sempre */
       
-      #txtHello { animation: showHello 10s forwards; }
-      #txtIm { animation: showIm 10s forwards; opacity: 0; }
-      #txtAugusto { animation: showAugusto 10s forwards; opacity: 0; }
-      
-      #faceNormal { animation: faceNormal 10s forwards; opacity: 0; }
-      #faceBlink { animation: faceBlink 10s forwards; opacity: 0; }
+      #txtHello { animation: showHello 12s forwards; }
+      #txtIm { animation: showIm 12s forwards; opacity: 0; }
+      #txtAugusto { animation: showAugusto 12s forwards; opacity: 0; }
+      #faceNormal { animation: faceNormal 12s forwards; opacity: 0; }
+      #faceBlink { animation: faceBlink 12s forwards; opacity: 0; }
     </style>
   </defs>
 
-  <!-- BACKGROUND: Carrega o PNG feito no Affinity (salve o PNG no repositório com o nome background.png) -->
-  <rect width="1584" height="396" fill="#0ea5e9" /> <!-- Fundo fallback (azul claro) caso a imagem demore a carregar -->
-  <image href="background.png" width="1584" height="396" preserveAspectRatio="xMidYMid slice" />
+  <!-- BACKGROUND COR SÓLIDA E A IMAGEM FEITA NO AFFINITY -->
+  <!-- Certifique-se de que a sua colagem no Affinity chame-se "banner.png" na pasta assets -->
+  <rect width="1584" height="396" fill="#010009" />
+  <image href="assets/banner.png" width="1584" height="396" preserveAspectRatio="xMidYMid slice" />
 
   <!-- CENTRO DA ANIMAÇÃO -->
-  <!-- Transladado para o exato centro considerando 280px do seu nome final -->
-  <g transform="translate(652, 210)" filter="url(#glow)">
+  <!-- Translado alinhado ao centro perfeito. x=542 garante que a palavra "AugustoCGM" fique 100% no meio da tela -->
+  <g transform="translate(542, 220)">
     
-    <!-- Máscara de revelação do texto -->
-    <clipPath id="textMask">
-      <rect id="maskRect" x="0" y="-50" height="70" width="0" />
-    </clipPath>
-
-    <!-- Textos alternando (tamanho exato por letra = 28px) -->
-    <g clip-path="url(#textMask)">
-      <text id="txtHello" class="txt-base" x="0" y="0" textLength="168" lengthAdjust="spacingAndGlyphs">Hello!</text>
-      <text id="txtIm" class="txt-base" x="0" y="0" textLength="84" lengthAdjust="spacingAndGlyphs">I'm</text>
-      <text id="txtAugusto" class="txt-base" x="0" y="0" textLength="280" lengthAdjust="spacingAndGlyphs">AugustoCGM</text>
+    <!-- Textos envolvidos pelo clip-path (máscara) e pelo glow de destaque -->
+    <g clip-path="url(#textMask)" filter="url(#glow)">
+      <!-- lengthAdjust garante que 1 caractere meça matematicamente 50px -->
+      <text id="txtHello" class="txt-base" x="0" y="0" textLength="300" lengthAdjust="spacingAndGlyphs">Hello!</text>
+      <text id="txtIm" class="txt-base" x="0" y="0" textLength="150" lengthAdjust="spacingAndGlyphs">I'm</text>
+      <text id="txtAugusto" class="txt-base" x="0" y="0" textLength="500" lengthAdjust="spacingAndGlyphs">AugustoCGM</text>
+      
+      <!-- As carinhas são tratadas como extensões e a máscara passará por cima delas -->
+      <text id="faceNormal" class="txt-base" x="500" y="0" textLength="200" lengthAdjust="spacingAndGlyphs"> ( :</text>
+      <text id="faceBlink" class="txt-base" x="500" y="0" textLength="200" lengthAdjust="spacingAndGlyphs"> ( ;</text>
     </g>
 
-    <!-- Cursor Sincronizado -->
-    <g class="cursor-mover">
-      <rect class="cursor-blinker" x="6" y="-42" width="4" height="52" fill="#ffffff" rx="1" />
-    </g>
-
-    <!-- Emoticons (Aparecem após o nome) -->
-    <g class="txt-base">
-      <text id="faceNormal" x="295" y="0">(:</text>
-      <text id="faceBlink" x="295" y="0">(;</text>
+    <!-- Cursor Bloco Branco Sincronizado -->
+    <g class="cursor-mover" filter="url(#glow)">
+      <rect class="cursor-blinker" x="6" y="-70" width="6" height="84" fill="#ffffff" rx="3" />
     </g>
 
   </g>
