@@ -13,23 +13,25 @@
 
 ---
 
-### Stacks & Design
+### Stacks & Ferramentas
 
-**Linguagens & Backend**
+**Linguagens & Banco de Dados**
 <br/>
-<img src="https://skillicons.dev/icons?i=java,python,postgres&theme=dark" alt="Backend Stacks" />
+<img src="https://skillicons.dev/icons?i=java,python,ts,js,postgres,mysql&theme=dark" alt="Backend e Linguagens" />
 
 <br/><br/>
 
 **Frontend, Mobile & UI/UX**
 <br/>
-<img src="https://skillicons.dev/icons?i=nextjs,react,flutter,figma&theme=dark" alt="Frontend Stacks" />
-<img src="assets/affinity.png" height="48" alt="Affinity Designer" />
+<img src="https://skillicons.dev/icons?i=html,css,tailwind,nextjs,react,dart,flutter,figma&theme=dark" alt="Frontend e Mobile" />
 
 <br/><br/>
 
-**Produtividade**
+**Design, Edição & Produtividade**
 <br/>
+<img src="assets/affinity.png" height="48" alt="Affinity Designer" />
+<img src="https://cdn.simpleicons.org/canva/white" height="48" alt="Canva" />
+<img src="https://cdn.simpleicons.org/capcut/white" height="48" alt="CapCut" />
 <img src="assets/powerpoint.png" height="48" alt="PowerPoint" />
 <img src="assets/word.png" height="48" alt="Word" />
 <img src="assets/excel.png" height="48" alt="Excel" />
