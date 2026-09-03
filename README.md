@@ -30,8 +30,8 @@
 **Design, Edição & Produtividade**
 <br/>
 <img src="assets/affinity.png" height="48" alt="Affinity Designer" />
-<img src="https://cdn.simpleicons.org/canva/white" height="48" alt="Canva" />
-<img src="https://cdn.simpleicons.org/capcut/white" height="48" alt="CapCut" />
+<img src="assets/canva.png" height="48" alt="Canva" />
+<img src="assets/capcut.png" height="48" alt="CapCut" />
 <img src="assets/powerpoint.png" height="48" alt="PowerPoint" />
 <img src="assets/word.png" height="48" alt="Word" />
 <img src="assets/excel.png" height="48" alt="Excel" />
