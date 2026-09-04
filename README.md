@@ -38,7 +38,9 @@
 
 ---
 
-### Meus projetos/trabalhos
+<details>
+  <summary><b><strong>Meus projetos/trabalhos</strong></b> <i>(Clique para ler)</i></summary>
+  <br/>
 
 **Em Forca**
 Um jogo mobile nativo que vai muito além de um passatempo clássico. O projeto funcionou como um laboratório prático de persistência local, integração de banco de dados SQL e gerenciamento de estado fluido na tela do usuário.  
@@ -59,6 +61,8 @@ Desenvolvimento de páginas com foco em altíssima conversão, animações fluid
 <br/>
 
 *E muitos outros!*
+
+</details>
 
 ---
 
