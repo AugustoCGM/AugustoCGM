@@ -14,7 +14,7 @@
 ---
 
 ### Stacks & Ferramentas
-
+ 
 **Linguagens & Banco de Dados**
 <br/>
 <img src="https://skillicons.dev/icons?i=java,python,ts,js,postgres,mysql&theme=dark" alt="Backend e Linguagens" />
