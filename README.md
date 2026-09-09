@@ -17,13 +17,26 @@
  
 **Linguagens & Banco de Dados**
 <br/>
-<img src="https://skillicons.dev/icons?i=java,python,ts,js,postgres,mysql&theme=dark" alt="Backend e Linguagens" />
+<img src="https://skillicons.dev/icons?i=java,python,c,ts,js,postgres,mysql,sqlite&theme=dark" alt="Linguagens e Banco de Dados" />
 
 <br/><br/>
 
 **Frontend, Mobile & UI/UX**
 <br/>
 <img src="https://skillicons.dev/icons?i=html,css,tailwind,nextjs,react,dart,flutter,figma&theme=dark" alt="Frontend e Mobile" />
+
+<br/><br/>
+
+**Game Dev & Arte 2D**
+<br/>
+<img src="https://skillicons.dev/icons?i=godot&theme=dark" alt="Godot Engine" />
+<img src="https://cdn.simpleicons.org/aseprite" height="48" alt="Aseprite" />
+
+<br/><br/>
+
+**Ambiente, DevOps & Ferramentas de Dev**
+<br/>
+<img src="https://skillicons.dev/icons?i=git,github,vscode,androidstudio,linux,nodejs&theme=dark" alt="DevOps e Ferramentas" />
 
 <br/><br/>
 
