@@ -9,6 +9,16 @@
   <br/>
   Acredito que o bom software nasce na interseção exata entre a engenharia estruturada e o design fluido. Minha trajetória acadêmica tem uma particularidade: começou no <b>Jornalismo</b> antes de migrar para a <b>Ciência da Computação</b>. Isso me deu uma visão muito específica sobre desenvolvimento — a tecnologia precisa se comunicar bem, engajar e ter empatia com quem a usa.<br><br>
   Trato o frontend com o mesmo rigor lógico que aplico ao backend. Seja estruturando a arquitetura de um app ou criando vetores personalizados, o objetivo é criar experiências dinâmicas e com propósito.
+
+  <div align="center">
+    <!-- Streak de Commits -->
+    </br>
+    </br>
+    <a href="https://git.io/streak-stats">
+      <img src="https://streak-stats.demolab.com?user=AugustoCGM&theme=transparent&hide_border=true&card_width=01000&card_height=170" alt="GitHub Streak" />
+    </a>
+  </div>
+  
 </details>
 
 ---
@@ -94,3 +104,5 @@ Desenvolvimento de páginas com foco em altíssima conversão, animações fluid
     <img src="https://cdn.simpleicons.org/steam/white" height="48" alt="Steam"/>
   </a>
 </div>
+
+
